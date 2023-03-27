@@ -1,0 +1,8 @@
+<div class="container p-4">
+  <% @books.each do |book| %>
+    <div class="d-flex justify-content-between p-3 mb-2 shadow bg-white">
+      <h4><%= book.title %></h4>
+      <%= image_tag "https://books.toscrape.com/#{book.image_url}", width: 100 %>
+    </div>
+  <% end %>
+</div>

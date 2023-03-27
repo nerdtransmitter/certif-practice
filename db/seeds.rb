@@ -1,22 +1,30 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
 require 'json'
 require 'open-uri'
+require 'nokogiri'
 
-API = 'https://tmdb.lewagon.com/movie/top_rated'
-data = URI.open('https://tmdb.lewagon.com/movie/top_rated').read
-movies = JSON.parse(data)
+Book.destroy_all
 
-movies['results'].each do |movie|
-  Movie.create(
-    title: movie['title'],
-    overview: movie['overview'],
-    rating: movie['vote_average'],
-    poster_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}"
-  )
+URL = 'https://books.toscrape.com/index.html'
+html = URI.open(URL).read
+doc = Nokogiri::HTML.parse(html)
+
+books = doc.css(".product_pod")
+
+
+books.each do |book|
+  title = book.css("h3 a").attr("title").value
+  author = book.css(".author").text
+  image_url = book.css("img").attr("src").value
+
+  # Create a new instance of your Book model using the data
+  Book.create!(title: title, author: author, image_url: image_url)
 end
+puts "books seeded"
+
+
+# images = doc.css(".thumbnail img")
+
+# # Loop through the images and print the image URL for each one
+# images.each do |image|
+#   puts image.attr("src")
+# end

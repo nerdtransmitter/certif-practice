@@ -10,3 +10,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+h1, h2, h3 {
+  font-family: $title-font;
+  font-weight: 900;
+}

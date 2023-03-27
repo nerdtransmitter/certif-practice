@@ -3,6 +3,6 @@ class Book < ApplicationRecord
   has_many :bookmarks
   has_one_attached :photo
 
-  validates :title, :overview, uniqueness: true
-  validates :title, :overview, presence: true
+  # validates :title, :description, uniqueness: true
+  # validates :title, :description, presence: true
 end
