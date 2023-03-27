@@ -14,4 +14,11 @@
 h1, h2, h3 {
   font-family: $title-font;
   font-weight: 900;
+  text-shadow: 0 0 6px rgba($color: rgb(49, 47, 47), $alpha: .3);
+  letter-spacing: 2px;
+  color: #2f4858;
+}
+
+body {
+  background-color: #fff1e6;
 }

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="d-flex justify-content-center flex-column align-items-center">
-    <h2 class='mt-2 fw-bolder'><%= @list.name %></h2>
+    <h1 class='mt-2 fw-bolder'><%= @list.name %></h1>
     <br>
     <div class="links d-flex justify-content-around">
       <%= link_to new_list_bookmark_path(@list), class: 'btn btn-ghost rounded-pill mx-2' do %>
@@ -18,18 +18,18 @@
     </div>
   </div>
 
-  <div class="d-flex justify-content-between pe-2 mx-5">
 
-    <div class="cards-books text-center">
-      <% @list.books.each do |book| %>
-        <div class="card-book shadow-lg m-4" style="background-image: url('https://books.toscrape.com/<%= book.image_url %>')" id="hello">
+  <div class="mt-3 cards-books text-center d-flex justify-content-center">
+    <% @list.books.each do |book| %>
+      <%# <div data-aos="zoom-out-up"> %>
+        <div class="card-book shadow-lg mb-3" style="background-image: url('https://books.toscrape.com/<%= book.image_url %>')" id="hello">
           <div class="overlay"></div>
           <div class="book-info"><h4><%= book.title %></h4></div>
           <div class="book-info-card bg-white p-2 ">
             <p  class="text-ellipsis"><em><%= book.bookmarks.first.comment %></em></p>
           </div>
         </div>
-        <% end %>
-    </div>
+      <%# </div> %>
+    <% end %>
   </div>
 </div>

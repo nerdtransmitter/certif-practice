@@ -16,12 +16,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Gloock&family=Lora:ital@0;1&family=Martian+Mono&family=Montserrat:wght@300&family=Nunito:wght@300;400&family=Open+Sans:wght@300;400&family=Orbitron:wght@800;900&family=Playfair+Display+SC:wght@400;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;700;800&display=swap');
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 40px;
-  padding: 30px;
-}
+// .cards {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+//   grid-gap: 40px;
+//   padding: 30px;
+// }
 .card {
   background-color: white;
   border: 1px solid #eaeaea;
@@ -34,8 +34,8 @@
 
 .card-book {
   position: relative;
-  width: 200px;
-  height: 300px;
+  width: 225px;
+  height: 350px;
   background-size: cover;
   background-position: center top;
   text-align: center !important;
@@ -45,6 +45,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 5px;
+  margin: 5vh 10vh;
 
   h4 {
     font-family: 'Poppins';
@@ -58,7 +59,7 @@
 
   .book-info {
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
@@ -109,15 +110,12 @@
 }
 
 .cards-books {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 40px;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // grid-gap: 40px;
+  flex-wrap: wrap;
 }
 
-.card-request {
-  position: relative;
-  font-family: 'Poppins' !important;
-}
 
 .overlay {
   position: absolute;
@@ -169,7 +167,7 @@
   text-overflow:ellipsis;
   overflow:hidden;
   display: -webkit-box !important;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   white-space: normal;
 }
@@ -185,14 +183,14 @@
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr ;
   }
 }
 
@@ -206,7 +204,7 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
   .cards-books {
     grid-template-columns: 1fr 1fr 1fr ;
